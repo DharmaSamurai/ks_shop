@@ -1,0 +1,498 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Kites Pro Shop</title>
+    <link type="text/css" rel="stylesheet" href="css/jquery.jscrollpane.css"/>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="header_upper">
+        <div class="info">+7 495 777-45-45
+            <div class="map">магазин на Ленинском
+                <div class="submenu">
+                    <img src="img/index/map.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="person_nav">
+            <ul class="menu">
+                <li>
+                    <a href="">
+                    <img src="img/user.png" alt="">Личный кабинет</a>
+                    <ul class="submenu">
+                        <div class="empty"></div>
+                        <div class="links">
+                            <li class="reg">
+                                <div class="link" id="register">Зарегистрироваться</div>
+                            </li>
+                            <li>
+                                <div class="link" id="enter">Войти</div>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">
+                    <img src="img/basket.png" alt="">Корзина</a>
+                    <ul class="submenu2">
+                        <div class="empty"></div>
+                        <div class="links2">
+                            <li class="first_good">
+                                <div class="good">
+                                    <img src="img/info/photo_1.jpg" alt="">
+                                    <p class="good-title">
+                                        <a href=""><img src="img/cansel_2.png" alt=""></a>
+                                    </p>
+                                    <div class="how_much">
+                                        <div class="title">
+                                            Кайт
+                                            <span class="name">Blade Skinny Boy </span>
+                                            <span class="year">2015</span>
+                                        </div>
+                                        <div class="good_body">
+                                            Размер (м2)
+                                            <input type="text">
+                                            Цвет
+                                            <span class="box_color"></span>
+                                            <div class="price">
+                                                <div class="price_red">68 000 p.</div>
+                                                <div class="old_price">62 000 p.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="good">
+                                    <img src="img/info/photo_1.jpg" alt="">
+                                    <p class="good-title">
+                                        <a href=""><img src="img/cansel_2.png" alt=""></a>
+                                    </p>
+                                    <div class="how_much">
+                                        <div class="title">
+                                            Кайт
+                                            <span class="name">Blade Skinny Boy </span>
+                                            <span class="year">2015</span>
+                                        </div>
+                                        <div class="good_body">
+                                            Размер (м2)
+                                            <input type="text">
+                                            Цвет
+                                            <span class="box_color"></span>
+                                            <div class="price">
+                                                <div class="price_red">68 000 p.</div>
+                                                <div class="old_price">62 000 p.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="link2">Оформить заказ</div>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <a href="index.html" id="logo"><img src="img/logo.png" alt="" class="logo"></a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="shop/kites.html">Кайты</a></li>
+            <li><a href="shop/boards.html">Доски</a></li>
+            <li><a href="shop/trapezes.html">Трапеции</a></li>
+            <li><a href="shop/wear.html">Одежда</a></li>
+            <li><a href="shop/bags.html">Сумки</a></li>
+            <li><a href="shop/accessories.html">Аксессуары</a></li>
+            <li><a href="sales.html">Акции</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="main-wrapper index">
+<main class="index">
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jssor.js"></script>
+    <script type="text/javascript" src="js/jssor.slider.js"></script>
+    <script>
+
+        jQuery(document).ready(function ($) {
+            var options = {
+                $AutoPlay: true,
+
+                $PauseOnHover: 1,                               //[Optional] Whether to pause when mouse over if a slideshow is auto playing, default value is false
+
+                $ArrowKeyNavigation: true,                          //Allows arrow key to navigate or not
+                $SlideWidth: 1080,                                   //[Optional] Width of every slide in pixels, the default is width of 'slides' container
+                $SlideHeight: 375,                                  //[Optional] Height of every slide in pixels, the default is width of 'slides' container
+                $SlideSpacing: 0,                                   //Space between each slide in pixels
+                $DisplayPieces: 2,                                  //Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+                $ParkingPosition: 100,                                //The offset position to park slide (this options applys only when slideshow disabled).
+
+                $ArrowNavigatorOptions: {                       //[Optional] Options to specify and enable arrow navigator or not
+                    $Class: $JssorArrowNavigator$,              //[Requried] Class to create arrow navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 0,                                 //[Optional] Auto center arrows in parent container, 0 No, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1                                       //[Optional] Steps to go for each navigation request, default value is 1
+                }
+            };
+
+            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizes
+            function ScaleSlider() {
+                var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
+                if (parentWidth)
+                    jssor_slider1.$ScaleWidth(Math.min(parentWidth, 1285));
+                else
+                    window.setTimeout(ScaleSlider, 30);
+            }
+            ScaleSlider();
+
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            //responsive code end
+        });
+    </script>
+
+    <div id="slider1_container">
+        <!-- Slides Container -->
+        <div class="sliders" u="slides">
+            <div><img u="image" src="img/banner/banner_1.jpg" /></div>
+            <div><img u="image" src="img/banner/banner_2.jpg" /></div>
+            <div><img u="image" src="img/banner/banner_3.jpg" /></div>
+            <div><img u="image" src="img/banner/banner_4.jpg" /></div>
+            <div><img u="image" src="img/banner/banner_5.jpg" /></div>
+        </div>
+    <!-- Arrow Left -->
+        <span u="arrowleft" class="jssora13l">
+        </span>
+        <!-- Arrow Right -->
+        <span u="arrowright" class="jssora13r">
+        </span>
+        <!--#endregion Arrow Navigator Skin End -->
+    </div>
+
+    <div class="blocks">
+        <div class="trinity first">
+            <div class="colored">
+                <h3>О магазине</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur praesentium modi aperiam recusandae suscipit nobis, fugiat eligendi velit laboriosam laudantium sapiente. Fugiat exercitationem commodi nisi minus provident.</p>
+            </div>
+            <div class="mins">
+                <div class="little">
+                    <div class="opacity imgs"></div>
+                    <a href="" class="loop"><img src="img/index/zoom.jpg" alt=""></a>
+                    <img src="img/index/photo_01.jpg" alt="">
+                </div>
+                <div class="little">
+                    <div class="opacity imgs"></div>
+                    <a href="" class="loop"><img src="img/index/zoom.jpg" alt=""></a>
+                    <img src="img/index/photo_01.jpg" alt="">
+                </div>
+                <div class="little big_screen">
+                    <div class="opacity imgs"></div>
+                    <a href="" class="loop"><img src="img/index/zoom.jpg" alt=""></a>
+                    <img src="img/index/photo_01.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="trinity second">
+            <div class="my_map">
+                <img src="img/index/map.jpg" alt="">
+            </div>
+            <div class="text">
+                г.Москва, ул.Ленинский проспект, д.30, вход со двора справа от 1-го подъезда. Мы работаем ежедневно с 10 до 21 часа.
+            </div>
+        </div>
+        <div class="trinity third">
+            <div class="mins">
+                <div class="little">
+                    <div class="opacity"></div>
+                    <p>Кайты <span>North</span></p>
+                    <p class="percent">-15%</p>
+                </div>
+                <div class="little">
+                    <div class="opacity"></div>
+                    <p>Кайтыборд <span>Liquid forse</span></p>
+                    <p class="percent">-5%</p>
+                </div>
+                <div class="little big_screen">
+                    <div class="opacity"></div>
+                    <p>Кайтыборд <span>Liquid forse</span></p>
+                    <p class="percent">-5%</p>
+                </div>
+            </div>
+            <div class="colored">
+                <h3>Акции</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur praesentium modi aperiam recusandae suscipit nobis, fugiat eligendi velit laboriosam laudantium sapiente. Fugiat exercitationem commodi nisi minus provident.</p>
+            </div>
+        </div>
+    </div>
+    <div class="white_back"></div>
+
+    <div class="popular">
+        <h1>Популярные товары</h1>
+        <div class="goods">
+            <div class="goods-wrapper">
+                <article>
+                    <div class="img">
+                        <div class="new">Новинка</div>
+                        <a href="goods.html"><img src="img/good_01.jpg" alt=""></a>
+                    </div>
+                    <p class="name">
+                        <a href="goods.html">Кайт <span class="upper">Blade Skinny boy</span>
+                        <span class="year">2015</span></a>
+                    </p>
+                    <p class="price">
+                        <span class="red">153 900 p</span>
+                    </p>
+                </article>
+                <article>
+                    <div class="img">
+                        <div class="new">Новинка</div>
+                        <a href="goods.html"><img src="img/good_01.jpg" alt=""></a>
+                    </div>
+                    <p class="name">
+                        <a href="goods.html">Кайт <span class="upper">Blade Skinny boy</span>
+                        <span class="year">2015</span></a>
+                    </p>
+                    <p class="price">
+                        <span class="red">153 900 p</span>
+                    </p>
+                </article>
+                <article>
+                    <div class="img">
+                        <div class="new">Новинка</div>
+                        <a href="goods.html"><img src="img/good_01.jpg" alt=""></a>
+                    </div>
+                    <p class="name">
+                        <a href="goods.html">Кайт <span class="upper">Blade Skinny boy</span>
+                        <span class="year">2015</span></a>
+                    </p>
+                    <p class="price">
+                        <span class="red">153 900 p</span>
+                    </p>
+                </article>
+                <article>
+                    <div class="img">
+                        <div class="new">Новинка</div>
+                        <a href="goods.html"><img src="img/good_01.jpg" alt=""></a>
+                    </div>
+                    <p class="name">
+                        <a href="goods.html">Кайт <span class="upper">Blade Skinny boy</span>
+                        <span class="year">2015</span></a>
+                    </p>
+                    <p class="price">
+                        <span class="red">153 900 p</span>
+                    </p>
+                </article>
+                <article>
+                    <div class="img">
+                        <div class="new">Новинка</div>
+                        <a href="goods.html"><img src="img/good_01.jpg" alt=""></a>
+                    </div>
+                    <p class="name">
+                        <a href="goods.html">Кайт <span class="upper">Blade Skinny boy</span>
+                        <span class="year">2015</span></a>
+                    </p>
+                    <p class="price">
+                        <span class="red">153 900 p</span>
+                    </p>
+                </article>
+                <article>
+                    <div class="img">
+                        <div class="new">Новинка</div>
+                        <a href="goods.html"><img src="img/good_01.jpg" alt=""></a>
+                    </div>
+                    <p class="name">
+                        <a href="goods.html">Кайт <span class="upper">Blade Skinny boy</span>
+                        <span class="year">2015</span></a>
+                    </p>
+                    <p class="price">
+                        <span class="red">153 900 p</span>
+                    </p>
+                </article>
+                <article>
+                    <div class="img">
+                        <div class="new">Новинка</div>
+                        <a href="goods.html"><img src="img/good_01.jpg" alt=""></a>
+                    </div>
+                    <p class="name">
+                        <a href="goods.html">Кайт <span class="upper">Blade Skinny boy</span>
+                        <span class="year">2015</span></a>
+                    </p>
+                    <p class="price">
+                        <span class="red">153 900 p</span>
+                    </p>
+                </article>
+                <article>
+                    <div class="img">
+                        <div class="new">Новинка</div>
+                        <a href="goods.html"><img src="img/good_01.jpg" alt=""></a>
+                    </div>
+                    <p class="name">
+                        <a href="goods.html">Кайт <span class="upper">Blade Skinny boy</span>
+                        <span class="year">2015</span></a>
+                    </p>
+                    <p class="price">
+                        <span class="red">153 900 p</span>
+                    </p>
+                </article>
+                <article>
+                    <div class="img">
+                        <div class="new">Новинка</div>
+                        <a href="goods.html"><img src="img/good_01.jpg" alt=""></a>
+                    </div>
+                    <p class="name">
+                        <a href="goods.html">Кайт <span class="upper">Blade Skinny boy</span>
+                        <span class="year">2015</span></a>
+                    </p>
+                    <p class="price">
+                        <span class="red">153 900 p</span>
+                    </p>
+                </article>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="brends">
+        <img src="img/parad/img_01.gif" alt="">
+        <img src="img/parad/img_02.gif" alt="">
+        <img src="img/parad/img_03.gif" alt="">
+        <img src="img/parad/img_04.gif" alt="">
+        <img src="img/parad/img_05.gif" alt="">
+        <img src="img/parad/img_06.gif" alt="">
+        <img src="img/parad/img_07.gif" alt="">
+        <img src="img/parad/img_08.gif" alt="">
+        <img src="img/parad/img_09.gif" alt="">
+        <img src="img/parad/img_10.gif" alt="">
+        <img src="img/parad/img_09.gif" alt="" class="big_screen">
+        <img src="img/parad/img_10.gif" alt="" class="big_screen">
+        <img src="img/parad/img_09.gif" alt="" class="big_screen">
+        <img src="img/parad/img_10.gif" alt="" class="big_screen">
+        <img src="img/parad/img_09.gif" alt="" class="big_screen">
+        <img src="img/parad/img_10.gif" alt="" class="big_screen">
+        <img src="img/parad/img_09.gif" alt="" class="big_screen">
+        <img src="img/parad/img_10.gif" alt="" class="big_screen">
+    </div>
+</main>
+</div>
+
+<footer>
+    <div class="footer_upper">
+        <div class="footer_trinity block1">
+            <ul class="star_menu">
+                <li><a href="info.html#delivery">Доставка</a></li>
+                <li><a href="info.html#security">Политика безопасности</a></li>
+                <li><a href="info.html#terms">Условия соглашения</a></li>
+                <li><a href="info.html#return">Возврат товара</a></li>
+            </ul>
+            <div><a href="info.html">Информация</a></div>
+        </div>
+        <div class="footer_trinity block2">
+            <ul class="star_menu_2">
+                <li><a href="services.html#producers">Поиск по производителям</a></li>
+                <li><a href="services.html#sertificats">Подарочные сертификаты</a></li>
+                <li><a href="services.html#repair_kaits">Специальные предложения</a></li>
+                <li><a href="services.html#repair_boards">Ремонт кайтов и досок</a></li>
+            </ul>
+            <div><a href="services.html">Сервисы</a></div>
+        </div>
+        <div class="footer_trinity block3">
+            <ul class="star_menu_2">
+                <li><a href=""><img src="img/contact_01.png" alt="">+7(495) 633-1555</a></li>
+                <li><a href=""><img src="img/contact_02.png" alt="">г.Москва, ул.Ленинский проспект, д.30</a></li>
+                <li><a href=""><img src="img/contact_03.png" alt="">shop@kites.ru</a></li>
+                <li><a href=""><img src="img/contact_04.png" alt="">shop.kites.ru</a></li>
+                <li><a href=""><img src="img/contact_05.png" alt="">facebook.com/kitesproshop</a></li>
+                <li><a href=""><img src="img/contact_06.png" alt="">twitter.com/kitesproshop</a></li>
+            </ul>
+            <div>Контакты</div>
+        </div>
+    </div>
+    <div class="footer_lower">Copyright &copy; Kites.ru</div>
+</footer>
+
+
+<!-- Модальное окно "Вопрос"-->
+<div id="modal_reg" class="modal_reg">
+    <h1>Регистрация
+        <div class="modal_reg_close" id="modal_reg_close">
+            <img src="img/close.png" alt="">
+        </div>
+    </h1>
+    <form action="" method="POST">
+        <ul class="social">
+            <li><span>зарегистрироваться через:</span></li>
+            <li><a href="">Facebook</a></li>
+            <li><span>|</span></li>
+            <li><a href="">Вконтакте</a></li>
+            <li><span>|</span></li>
+            <li><a href="">Google</a></li>
+        </ul>
+        <ul class="reg_inputs">
+            <li><label for="mail">E-mail</label><input type="text" id="mail"></li>
+            <li><label for="fio">Имя / ФИО</label><input type="text" id="fio"></li>
+            <li><label for="tel">Телефон</label><input type="text" id="tel"></li>
+            <div></div>
+            <li><label for="log">Логин</label><input type="text" id="log"></li>
+            <li><label for="pass">Пароль</label><input type="text" id="pass"></li>
+        </ul>
+
+        <input type="submit" value="Зарегистрироваться">
+    </form>
+</div>
+<div id="modal_reg_overlay" class="modal_reg_overlay"></div>
+<!-- Конец модального окна -->
+
+<!-- Модальное окно "Картинки"-->
+<div id="modal_img" class="modal_img">
+    <h1>Галерея
+        <div class="modal_img_close" id="modal_img_close">
+            <img src="img/close.png" alt="">
+        </div>
+    </h1>
+
+    <div class="slider">
+        <div class="img_container">
+            <img src="img/index/gallery/1.jpg" alt="" id="mainImg">
+            <img src="img/index/gallery/2.jpg" alt="" id="mainImg2">
+        </div>
+
+        <div id="prev" class="prev"></div>
+        <div id="next" class="next"></div>
+
+    </div>
+
+</div>
+<div id="modal_img_overlay" class="modal_img_overlay"></div>
+<!-- Конец модального окна -->
+
+
+
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<script type="text/javascript" src="js/jquery.ui-slider.js"></script>
+<script type="text/javascript" src="js/jqueryrotate.js"></script>
+<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="js/jquery.jscrollpane.js"></script>
+<script src="js/script.js"></script>
+
+<script type="text/javascript">
+jQuery(function() {
+    jQuery('.goods').jScrollPane({showArrows: true});
+    var api = element.data('jsp');
+});
+</script>
+
+</body>
+</html>
